@@ -7,8 +7,9 @@ export default function Home() {
         <title>Donate Crypto</title>
         <meta charSet="utf-8" />
       </Head>
-      <div></div>
+      <div className="container px-4 py-5">
       <h1>Donate Crypto</h1>
+      </div>
     </>
   );
 }
