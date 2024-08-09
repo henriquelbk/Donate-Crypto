@@ -1,6 +1,20 @@
+import React from "react";
+import { useState } from "react";
 import Head from "next/head";
+import Footer from "@/components/Footer";
+import { doLogin } from "@/services/Web3Service";
 
 export default function Home() {
+
+  const [wallet, setWallet] = useState("")
+  const [error, setError] = useState("")
+
+  function btnDoLogin() {
+    doLogin()
+      .then(wallet => setWallet(wallet))
+      .catch(err => setError(err.message));
+  }
+
   return (
     <>
       <Head>
@@ -17,9 +31,20 @@ export default function Home() {
               height="500"
             />
           </div>
-
-          <h1>Donate Crypto</h1>
+            <div className="col-lg-6"></div>
+          <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Donate Crypto</h1>
+          <p className="lead">Your custom donate dex platform</p>
+          <p className="lead mb-3">Sign in with your wallet, create your campaign or donate do existing campaings!</p>
+          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" className="btn btn-primary btn-lg px-4 me-md-2" onClick={btnDoLogin}>
+              <img src="/metamask.png" width="64" className="me-3"/>
+              Connect with Metamask
+            </button>
+            {wallet}
+            {error}
+          </div>
         </div>
+        <Footer />
       </div>
     </>
   );
