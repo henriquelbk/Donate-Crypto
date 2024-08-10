@@ -36,7 +36,7 @@ export default function Home() {
           <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
             Donate Crypto
           </h1>
-          <p className="lead">Your custom donate dex platform</p>
+          <p className="lead">Your custom donnations dex platform</p>
           <p className="lead mb-3">
             Sign in with your wallet, create your campaign or donate do existing
             campaings!
