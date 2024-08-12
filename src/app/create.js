@@ -15,6 +15,10 @@ export default function Create(){
         setCampaign(prevState => ({...prevState, [evt.target.id]: evt.target.value}));
     }
 
+    function btnSaveClick(){
+        alert(JSON.stringify(campaign));
+    }
+
     return (
         <>
         <Head>
@@ -48,7 +52,7 @@ export default function Create(){
             </div>
           </div>
           <div className="col-6 mb-3">
-            <input type="button" className="btn btn-primary col-12 p-3" value="Save Campaign" />          
+            <input type="button" className="btn btn-primary col-12 p-3" value="Save Campaign" onClick={btnSaveClick}/>          
             </div>
         <div className="col-6 mb-3">
             <Link href="/" className="btn btn-secondary col-12 p-3">Back</Link>         
