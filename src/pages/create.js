@@ -4,7 +4,9 @@ import React from "react";
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
+import { addCampaign } from "@/services/Web3Service";
+
 
 export default function Create(){
 
@@ -16,7 +18,13 @@ export default function Create(){
     }
 
     function btnSaveClick(){
-        alert(JSON.stringify(campaign));
+        setMessage("Saving...")
+        addCampaign(campaign)
+            .then(tx => setMessage(JSON.stringify(tx)))
+            .catch(err => {
+                console.error(err);
+                setMessage(err.message);
+            })
     }
 
     return (
@@ -57,6 +65,11 @@ export default function Create(){
         <div className="col-6 mb-3">
             <Link href="/" className="btn btn-secondary col-12 p-3">Back</Link>         
         </div>
+        {
+            message
+            ? <div className="alert alert-success p-3 col-6" role="alert">{message}</div>
+            : <></>
+        }
         <Footer />
         </div>
         </>
