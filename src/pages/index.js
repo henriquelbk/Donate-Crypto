@@ -27,6 +27,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale-1"/>
       </Head>
       <div className="container px-4 py-5">
+        {/* aqui ta dando xabu no style */}
         <div className="row flex-lg-row-reverse align-items-center py-5 g-5">
           {!wallet ? (
             <div className="col-10 col-sm-8 col-lg-6">
