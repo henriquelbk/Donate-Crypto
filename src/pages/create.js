@@ -20,7 +20,8 @@ export default function Create(){
     function btnSaveClick(){
         setMessage("Saving...")
         addCampaign(campaign)
-            .then(tx => setMessage(JSON.stringify(tx)))
+            .then(tx => getLastCampaignId())
+            .then(id => setMessage(`Campaign saved with id <b>${id}</b>. Call your friends and send them this number!`))
             .catch(err => {
                 console.error(err);
                 setMessage(err.message);
