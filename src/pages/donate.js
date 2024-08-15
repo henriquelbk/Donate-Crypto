@@ -80,7 +80,7 @@ export default function Donate(){
                             <div className="col-7">
                                 {
                                     campaign.videoUrl
-                                    ? <iframe width="100%" height="480" src{campaign.videoUrl}></iframe>
+                                    ? <iframe width="100%" height="480" src={campaign.videoUrl}></iframe>
                                     : <img src={campaign.imageUrl} className="d-block mx-lg-auto img-fluid" width="640" height="480" />
                                                                }
 

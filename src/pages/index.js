@@ -7,7 +7,6 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import { doLogin } from "../services/Web3Service";
 
-
 export default function Home() {
   const [wallet, setWallet] = useState("");
   const [error, setError] = useState("");
