@@ -65,10 +65,10 @@ export default function Home() {
                 <p className="mb-3">What do you want to do?</p>
                 <div className="d-grid gap-2">
                   <Link href="/donate" className="btn btn-primary col-6 p-3">
-                    I want to donate
+                    I want to donate!
                   </Link>
                   <Link href="/create" className="btn btn-secondary col-6 p-3">
-                    I want to create a Campaign
+                    I want to create a Campaign!
                   </Link>
                 </div>
               </div>
